@@ -61,6 +61,15 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    Widget child;
+    if(_page==1){ // if in garden, show floating button
+      child = FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      );
+    } else child=null;
+
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(65.0),
@@ -72,11 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       body: condts[_page],
-      /*floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),*/ // This trailing comma makes auto-formatting nicer for build methods.
+      floatingActionButton: child,
       bottomNavigationBar: CurvedNavigationBar(
         color: Colors.green,
         backgroundColor: Colors.white,

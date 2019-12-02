@@ -10,8 +10,14 @@ class Garden extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      child: ItemList(),
-    );
+        width: double.infinity,
+        child: Column(
+          children: <Widget>[
+            Text(
+              "My garden", textAlign: TextAlign.center,
+            ),
+            ItemList(),
+          ],
+        ));
   }
 }
